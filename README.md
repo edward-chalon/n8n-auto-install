@@ -41,7 +41,9 @@ This script will take a few parameters at the beginning of the script, and then:
 3. Use the console in Digital Ocean to open up a session to the VPS. Then, run:
 ![text](readmeAssets/openConsole.png)
 
-`curl -sL https://github.com/edward-chalon/n8n-auto-install/installN8N.sh -o installN8N.sh`
+
+`curl -sL https://raw.githubusercontent.com/edward-chalon/n8n-auto-install/main/installN8N.sh -o installN8N.sh`
+
 `sudo bash installN8N.sh`
 
 
