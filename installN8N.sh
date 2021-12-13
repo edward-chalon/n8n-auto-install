@@ -109,13 +109,16 @@ EOM
 sudo systemctl start caddy
 sudo systemctl enable caddy
 
-echo "Wait 10 seconds..."
+echo "Getting Caddy Ready..."
 sleep 10
 
 sudo systemctl restart caddy
-
-echo "Last wait of 10 seconds..."
 sleep 10
+
+caddy stop
+caddy start
+
+echo -ne '\n'
 
 echo "  "
 echo "  "
