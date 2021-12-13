@@ -44,9 +44,7 @@ This script will take a few parameters at the beginning of the script, and then:
 ![text](readmeAssets/openConsole.png)
 
 
-`curl -sL https://raw.githubusercontent.com/edward-chalon/n8n-auto-install/main/installN8N.sh -o installN8N.sh`
-
-`sudo bash installN8N.sh`
+`curl -sL https://raw.githubusercontent.com/edward-chalon/n8n-auto-install/main/installN8N.sh -o installN8N.sh && sed -i.bak 's/\r$//' installN8N.sh && sudo bash installN8N.sh`
 
 
 ### TODO?

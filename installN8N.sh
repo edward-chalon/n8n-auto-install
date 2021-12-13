@@ -100,7 +100,7 @@ echo "Setting up Caddy now that we have the server installed..."
 # Setup the reverse proxy...
 # write a default Caddyfile
 cat <<EOM | sudo tee Caddyfile
-${secureServerURL} {
+https://${serverURL} {
     reverse_proxy * localhost:5678 
 }
 EOM
