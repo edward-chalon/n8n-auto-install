@@ -25,15 +25,16 @@ scriptUser=$USER
 echo "First, lets get some details..."
 
 read -p "Whats the URL of the server we are going to setup SSL for? (example: n8n.edwardchalon.com OR edwardchalon.com:   " serverURL
-read -p "Whats the password for the DB?   " dbPassword
-read -p "What do you want to use for the n8n Admin Username?   " n8nUsername
-read -p "What do you want to use for the n8n Admin Password?   " n8nPassword
+read -p "What do you want the password for the postgreSQL DB? (default username of postgres will be used)   " dbPassword
+read -p "What do you want to use for the n8n Admin Username to login?   " n8nUsername
+read -p "What do you want to use for the n8n Admin Password to login?   " n8nPassword
 
 #Check if any of the variables are empty
 if [ -z "${serverURL}" ] || [ -z "${dbName}" ] || [ -z "${dbUsername}" ] || [ -z "${dbPassword}" ] || [ -z "${n8nUsername}" ] || [ -z "${n8nPassword}" ]; then
     echo "All of your details need to be filled out to continue. Try again :) "
     exit 1
 fi
+secureServerURL="https://${serverURL}"
 
 #2. Prepare Ubuntu
 echo "Alrighty, moving on - we are going to do some housekeeping first."
@@ -99,7 +100,7 @@ echo "Setting up Caddy now that we have the server installed..."
 # Setup the reverse proxy...
 # write a default Caddyfile
 cat <<EOM | sudo tee Caddyfile
-https://${serverURL} {
+${secureServerURL} {
     reverse_proxy * localhost:5678 
 }
 EOM

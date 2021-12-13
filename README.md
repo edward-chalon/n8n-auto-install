@@ -4,6 +4,8 @@
 
 ### Purpose
 
+Hows N8N installed in less than 15 mins sound?
+
 N8N is an amazing tool, it just has alot of parts to install on a vanilla VPS. Then theres also the fact that there are alot of ways to install it too. This way, sets up a brand new VPS
 with everything needed for you :tada:
 
